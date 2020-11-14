@@ -14,6 +14,12 @@
     
     
     .places{color:rgb(212, 77, 36);}
+
+    #container{width:650px;
+      margin:auto;
+      border: 3px solid rgb(135, 128, 29);
+      padding:13 px;
+      }
     
     
     </style>
@@ -23,7 +29,7 @@
     
     
     <body>
-    
+    <div id="container">
         <h1>Travel to Paris
         </h1>
     <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Paris_Night.jpg" width="600" height="258"    >
@@ -68,5 +74,6 @@
            <img scr="https://www.orange-tourisme.fr/sites/orange-tourisme.fr/files/sT3Oine0ctyles/slider_page_detail/public/4451415_0.jpeg?itok=" width="198"  >         
   
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Versailles-Chateau-Jardins02_%28cropped%29.jpg/300px-Versailles-Chateau-Jardins02_%28cropped%29.jpg" width="127">
-    </body>
+</div> 
+</body>
 </html>
