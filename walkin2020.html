@@ -48,6 +48,27 @@ this.y+=5;
 this.y-=5;
 }
 };
+noStroke();
+
+var r = 255;
+var g = 90;
+var b = 0;
+
+for (var angle=0; angle<360; angle+=30){
+    fill(r, g, b);
+    r-=12;
+    g+=13;
+    b+=12;
+pushMatrix();
+translate(600,600);
+rotate(angle);
+rect(0, 0,150,15);
+popMatrix();
+}				
+				
+				
+				
+				
 
 var w = new Walker();
 
