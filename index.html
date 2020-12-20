@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DecemberLightning</title>
+    </head>
+ <style> 
+    /* First lets set a background */
+.bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://lh3.googleusercontent.com/proxy/Ehu6ZcaU15Ce5Q699QPNQUenQVhISK2FmvOb72rlO1b_chGrTvZNsrzNKpm5QTefWImPfP5zyc41htBmAP6PE12sL6XSo79LsoNxGP7H6WOmN-WIxuQeZB2z_MlAKV88_3T0gkEm1T4Eofo');
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -2;
+}
+
+/* Now the same background, but with brightness filters*/
+.lightning{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://lh3.googleusercontent.com/proxy/Ehu6ZcaU15Ce5Q699QPNQUenQVhISK2FmvOb72rlO1b_chGrTvZNsrzNKpm5QTefWImPfP5zyc41htBmAP6PE12sL6XSo79LsoNxGP7H6WOmN-WIxuQeZB2z_MlAKV88_3T0gkEm1T4Eofo');
+  background-position: center center;
+  background-origin: content-box;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-filter: brightness(3);
+  filter: brightness(3);
+  -o-filter: brightness(3);
+  -moz-filter: brightness(3);
+  z-index: -1;
+}
+
+/*Now just a opacity animation*/
+.flashit{
+-webkit-animation: flash ease-out 7s infinite;
+-moz-animation: flash ease-out 7s infinite;
+animation: flash ease-out 7s infinite;
+animation-delay: 2s;
+}
+
+@-webkit-keyframes flash {
+	from { opacity: 0; } 
+  92% { opacity: 0; }
+	93% { opacity: 0.6; }
+  94% { opacity: 0.2; }
+  96% { opacity: 0.9; } 
+	to { opacity: 0; }
+}
+
+@keyframes flash {
+	from { opacity: 0; } 
+    92% { opacity: 0; }
+	93% { opacity: 0.6; }
+    94% { opacity: 0.2; }
+    96% { opacity: 1; } 
+	to { opacity: 0; }
+}
+/*End! is that simple! */
+
+/*Now just some stupid logo to get some look and feel */
+#logo{
+  z-index:1000;
+  width: 100%;
+  font-size: 3rem;
+  color: white;
+  position: fixed;
+  top: 60%;
+  left: 60%;
+  margin-left: -18rem;
+  margin-top: -2rem;
+  font-weight: 800;
+}
+#logo span{ font-weight: 600;}
+#next{z-index:1000;
+        color: darkblue;
+        position:fixed;
+        top:200px;
+        right-200px;}
+
+
+#end{z-index: 1000;
+      color: white;
+      position: fixed;
+      top:90%;
+      left: 90%;  }
+
+html , body{
+  font-family: "Titillium Web", "lato" , sans-serif;
+}
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:200,900|Lato:100,300,900);
+
+@media screen and (max-width: 630px){
+  #logo{
+    font-size: 3rem;
+    margin-left: -9rem;
+    margin-top: -1rem;
+  }
+} 
+   
+</style>  
+    <body>
+  <!-- two layers of Image-->
+<div class="bg"></div>
+<div class="lightning flashit"></div>
+
+<!-- This is just a logo-->
+<div id="logo">
+  <h1>2020 <span> WILL BE GONE</span></h1>
+ </div>
+ <div id="end">
+ <h5> count ten and click, make it gone..</h5> </div>
+ 
+ <div id="next">
+ <h5 a href="https://michaelfan0310.github.io/travel/walkin2020.html"> Next</a> </h5> </div>
+
+    </body>
+</html>
+    
+
