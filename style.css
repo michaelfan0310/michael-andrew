@@ -117,7 +117,7 @@ max-width: 700px;}
 
 
 .menu{display: none;}
-         
+.container  {background-color: rgb(29, 184, 132);}    
 
 .vertical1 {position: absolute;
 top:110%;
@@ -130,6 +130,8 @@ right:0;}
 .vertical3 {position: absolute;
 top:110%;
 left:36%;}
+
+
          
 
 
