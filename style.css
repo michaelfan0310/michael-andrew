@@ -119,4 +119,17 @@ max-width: 700px;}
 .menu{display: none;}
          
 
+.vertical1 {position: absolute;
+top:130%;
+left:0;}
+
+.vertical2 {position: absolute;
+top:110%;
+right:0;}
+
+.vertical3 {position: absolute;
+top:110%;
+left:36%;}
+         
+
 
