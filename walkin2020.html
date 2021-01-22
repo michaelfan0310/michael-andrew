@@ -95,14 +95,28 @@ popMatrix();
 				
 				
 				
-				
+var zOff = 0.0;					
 
 var w = new Walker();
 
 
-draw = function() {
-w.walk();
-w.display();
+   draw = function() {
+	w.walk();
+	w.display();
+	  var xOff = 0.0;
+          for (var x = 800; x < 1000; x++) {
+          var yOff = 0.0;
+	  for (var y = 0; y < 200; y++) {
+	var bright = map(noise(xOff, yOff, zOff), 0, 1, 0, 255);
+	stroke(bright-220, bright+30, bright+220);
+	point(x, y);
+	yOff += 0.02;
+    }
+    xOff += 0.02;
+   }
+
+    zOff += 0.02;
+	
 };       }};
 
     // Get the canvas that Processing-js will use
