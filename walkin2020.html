@@ -55,7 +55,7 @@ this.y = 200;
 
 Walker.prototype.display = function() {
 noStroke();
-fill(random(this.x), random(this.y),random(this.x+this.y));
+fill(random(this.x+this.y), random(this.x+this.y*2),random(this.x+this.y));
 
 ellipse(this.x,this.y,4,4);
 };
