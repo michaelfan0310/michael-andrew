@@ -29,11 +29,14 @@
 
   <h1> In 2020, it's untargetable.... </h1>
 	
-	 <div id="back"><h3> <a href=https://michaelfan0310.github.io/travel/>NEXT</a> </h3>
-	 <audio controls> <source src="InTheAirTonight.mp3">In The Air Tonight</audio>
-	</div>
+   <div id="back"><h3> <a href=https://michaelfan0310.github.io/travel/> Next</a> </h3> 
+    <audio controls> <source src="In The Air Tonight.mp3">In The Air Tonight</audio>
+  
+  </div>
 
-<h6>Just hovering around</h6>	
+<h6>Just hovering around
+
+ </h6>	
 	
 
   <p align="center"> 
@@ -55,7 +58,7 @@ this.y = 200;
 
 Walker.prototype.display = function() {
 noStroke();
-fill(this.x,this.y, 150);
+fill(this.x, this.y, 150);
 
 ellipse(this.x,this.y,4,4);
 };
@@ -65,13 +68,13 @@ Walker.prototype.walk = function() {
 var choice = floor(random(4));
 if (choice === 0) {
 //move right
-this.x+=6;
+this.x+=5;
 } else if (choice === 1) {
 //move left
 this.x-=5;
 } else if (choice === 2) {
 //move down
-this.y+=5.5;
+this.y+=5;
 } else {
 //move up
 this.y-=5;
@@ -89,7 +92,7 @@ for (var angle=0; angle<360; angle+=30){
     g+=13;
     b+=12;
 pushMatrix();
-translate(600,400);
+translate(200,600);
 rotate(angle);
 rect(0, 0,150,15);
 popMatrix();
@@ -97,29 +100,104 @@ popMatrix();
 				
 				
 				
-var zOff = 0.0;					
+var zOff = 0.0;				
 
 var w = new Walker();
 
 
-   draw = function() {
-	w.walk();
-	w.display();
-	  var xOff = 0.0;
-          for (var x = 800; x < 1000; x++) {
-          var yOff = 0.0;
-	  for (var y = 0; y < 200; y++) {
-	var bright = map(noise(xOff, yOff, zOff), 0, 1, 0, 255);
-	stroke(bright-220, bright+30, bright+220);
-	point(x, y);
-	yOff += 0.02;
+var Attractor = function() {
+  this.position = new PVector(width/2, height/2);
+  this.mass = 20;
+  this.G = 1;
+};
+
+Attractor.prototype.calculateAttraction = function(m) {
+  var force = PVector.sub(this.position, m.position);
+  var distance = force.mag();
+  distance = constrain(distance, 5, 25);  
+  force.normalize();
+  var strength = (this.G * this.mass * m.mass) / (distance * distance);
+  force.mult(strength);
+  return force;
+};
+
+Attractor.prototype.display = function() {
+  ellipseMode(CENTER);
+  strokeWeight(4);
+  stroke(0);
+  ellipse(this.position.x, this.position.y, this.mass*2, this.mass*2);
+};
+
+
+var Mover = function(mass, x, y,color) {
+  this.position = new PVector(x, y);
+  this.velocity = new PVector(1, 0);
+  this.acceleration = new PVector(0, 0);
+  this.mass = mass;
+  this.color=color;
+};
+
+Mover.prototype.applyForce = function(force) {
+  var f = PVector.div(force,this.mass);
+  this.acceleration.add(f);
+};
+
+Mover.prototype.update = function() {
+  this.velocity.add(this.acceleration);
+  this.position.add(this.velocity);
+  this.acceleration.mult(0);
+};
+
+Mover.prototype.display = function() {
+  noStroke();
+  fill(this.color);
+  ellipse(this.position.x, this.position.y, this.mass*16, this.mass*16);
+};
+
+var movers = [];
+var attractor = new Attractor();
+
+for (var i = 0; i < 10; i++) {
+  var randomC=random(color(209,255));
+  movers[i] = new Mover(random(0.03, 0.3), random(width), random(height),color(randomC));
+}
+
+draw = function() {
+
+
+
+  
+  for (var i = 0; i < movers.length; i++) {
+      var force = attractor.calculateAttraction(movers[i]);
+      movers[i].applyForce(force);
+
+      movers[i].update();
+      movers[i].display();
+  }
+w.walk();
+w.display();
+
+
+  var xOff = 0.0;
+  for (var x = 800; x < 1000; x++) {
+    var yOff = 0.0;
+    for (var y = 0; y < 200; y++) {
+        var bright = map(noise(xOff, yOff, zOff), 0, 1, 0, 255);
+        stroke(bright-220, bright+30, bright+220);
+        point(x, y);
+        yOff += 0.02;
     }
     xOff += 0.02;
    }
 
     zOff += 0.02;
-	
-};       }};
+
+
+};       }
+
+
+
+};
 
     // Get the canvas that Processing-js will use
     var canvas = document.getElementById("mycanvas"); 
@@ -131,5 +209,9 @@ var w = new Walker();
 
 
 </html>
+
+
+
+
 
 
