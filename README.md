@@ -1,2 +1,2 @@
 # walker
-a script try after seeking araura
+Javascript try after seeking aurora
