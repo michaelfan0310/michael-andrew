@@ -117,6 +117,7 @@ max-width: 700px;}
 
 
 .menu{display: none;}
+
 .container  {background-color: rgb(29, 184, 132);}    
 
 .vertical1 {position: absolute;
@@ -132,6 +133,41 @@ left:28%;}
 top:105%;
 right:15%;}
 
-         
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: rgb(29, 184, 132);
+  padding: 10px;
+}
+
+  .grid-item {
+
+    padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px){
+ .grid-container {
+  position: relative;
+  margin-top: 85%;
+ background-color: rgba(220, 238, 232, 0);
+  padding: 10px;
+  float: left;
+}
+
+.vertical1 {position: relative;
+margin-top: 5%;
+float:left}
 
 
+.vertical3 {position: relative;
+margin-top: 5%;
+float:left}
+
+.vertical2 {position: relative;
+margin-top: 5%;
+float:left;
+}
+
+}
