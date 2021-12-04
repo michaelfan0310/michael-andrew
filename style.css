@@ -86,10 +86,11 @@ text-transform: uppercase;
 
 
 .text h3{
-    font-size: 5em;
+    font-size: 4.5em;
     font-weight: 800;
-    line-height: 1em;
+    line-height: 1.5em;
     text-transform: uppercase;
+    color:rgba(245, 245, 245, 0.438);
     
     }
 
@@ -102,10 +103,10 @@ max-width: 700px;}
 .text a {
     display: inline-block;
     font-size: lem;
-    background: oldlace;
+    background: rgba(242, 246, 248, 0.329);
     padding: 10px 30px;
     text-decoration: none;
-    color: #111;
+    color: rgb(73, 226, 231);
     margin-top: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
